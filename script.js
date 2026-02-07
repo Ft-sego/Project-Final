@@ -264,5 +264,29 @@ function setupMusicPlayer() {
             bgMusic.pause();
             musicToggle.textContent = config.music.startText;
         }
+        // 🌟 Create floating GIFs on the Valentine page
+const floatingGifs = [
+    "assets/gifs/dancing_kitty.gif",
+    "assets/gifs/kitty_winking.gif"
+];
+
+function createFloatingGifs() {
+    const container = document.querySelector('.floating-elements');
+    if (!container) return;
+
+    const img = document.createElement('img');
+    img.src = floatingGifs[Math.floor(Math.random() * floatingGifs.length)];
+    img.className = 'floating-gif';
+
+    img.style.left = Math.random() * 100 + 'vw';
+    img.style.animationDelay = Math.random() * 3 + 's';
+
+    container.appendChild(img);
+
+    setTimeout(() => {
+        img.remove();
+    }, 18000); // removes after animation ends
+}
+
     });
 } 
