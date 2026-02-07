@@ -87,6 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Create floating hearts and bears
 function createFloatingElements() {
+ setInterval(createFloatingGifs, 5000); // every 5 seconds
     const container = document.querySelector('.floating-elements');
     
     // Create hearts
