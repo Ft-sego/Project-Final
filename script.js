@@ -79,6 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Create initial floating elements
     createFloatingElements();
+    setInterval(createFloatingGif, 4500);
 
     // Setup music player
     setupMusicPlayer();
@@ -113,6 +114,31 @@ function setRandomPosition(element) {
     element.style.animationDelay = Math.random() * 5 + 's';
     element.style.animationDuration = 10 + Math.random() * 20 + 's';
 }
+// Floating GIFs (added on top of emojis)
+const floatingGifs = [
+    "assets/gifs/dancing_kitty.gif",
+    "assets/gifs/kitty_winking.gif"
+];
+
+function createFloatingGif() {
+    const container = document.querySelector('.floating-elements');
+    if (!container) return;
+
+    const img = document.createElement('img');
+    img.src = floatingGifs[Math.floor(Math.random() * floatingGifs.length)];
+    img.className = 'floating-gif';
+
+    img.style.left = Math.random() * 100 + 'vw';
+    img.style.animationDelay = Math.random() * 3 + 's';
+    img.style.animationDuration = 12 + Math.random() * 10 + 's';
+
+    container.appendChild(img);
+
+    setTimeout(() => {
+        img.remove();
+    }, 20000);
+}
+
 
 // Function to show next question
 function showNextQuestion(questionNumber) {
