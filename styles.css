@@ -49,6 +49,14 @@ body {
     font-size: 2rem;
     animation: float var(--float-duration) linear infinite;
 }
+.floating-gif {
+    position: absolute;
+    bottom: -80px;
+    width: 45px;
+    height: auto;
+    pointer-events: none;
+    animation: float var(--float-duration) linear;
+}
 
 @keyframes float {
     0% {
