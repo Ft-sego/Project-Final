@@ -295,6 +295,10 @@ document.addEventListener('click', () => {
   music.volume = VALENTINE_CONFIG.music.volume || 0.6;
   music.play().catch(() => {});
 }, { once: true });
+document.getElementById('yesBtn').addEventListener('click', () => {
+  const music = document.getElementById('bgMusic');
+  music?.play();
+});
 
     });
 } 
