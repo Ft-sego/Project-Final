@@ -288,6 +288,13 @@ function createFloatingGifs() {
         img.remove();
     }, 18000); // removes after animation ends
 }
+document.addEventListener('click', () => {
+  const music = document.getElementById('bgMusic');
+  if (!music) return;
+
+  music.volume = VALENTINE_CONFIG.music.volume || 0.6;
+  music.play().catch(() => {});
+}, { once: true });
 
     });
 } 
