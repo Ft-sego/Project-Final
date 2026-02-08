@@ -324,3 +324,7 @@ h2 {
     transform: scale(1.05);
     background: var(--secondary-color);
 } 
+/* 🔇 Hide music controls (autoplay will be JS-controlled) */
+.music-controls {
+    display: none !important;
+}
